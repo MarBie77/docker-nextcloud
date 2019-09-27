@@ -3,7 +3,7 @@ FROM nextcloud:17-fpm-alpine
 LABEL maintainer="Martin Biermair <martin@biermair.at>"
 
 RUN apk upgrade --update \
- && apk add imap-dev openssl-dev krb5-dev supervisor libgmp-dev \
+ && apk add imap-dev openssl-dev krb5-dev supervisor gmp-dev \
  && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
  && docker-php-ext-install imap \
  && docker-php-ext-install gmp \

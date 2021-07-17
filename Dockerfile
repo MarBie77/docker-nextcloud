@@ -1,5 +1,5 @@
 # Mostly taken from https://github.com/nextcloud/docker (see cron and imap example, I just needed both ;) )
-FROM nextcloud:21-fpm-alpine
+FROM nextcloud:22-fpm-alpine
 LABEL maintainer="Martin Biermair <martin@biermair.at>"
 
 RUN apk upgrade --update \

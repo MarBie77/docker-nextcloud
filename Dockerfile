@@ -2,13 +2,9 @@
 FROM nextcloud:22-fpm-alpine
 LABEL maintainer="Martin Biermair <martin@biermair.at>"
 
-RUN apk add --no-cache --virtual imap-dev openssl-dev krb5-dev supervisor gmp-dev imagemagick
-
-RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
- && docker-php-ext-install -j "$(nproc)" imap
+RUN apk add --no-cache supervisor gmp-dev imagemagick
  
-RUN mkdir /var/log/supervisord /var/run/supervisord \
- && rm -rf /var/cache/apk/*
+RUN mkdir /var/log/supervisord /var/run/supervisord
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 

@@ -1,5 +1,5 @@
 # Mostly taken from https://github.com/nextcloud/docker (see cron and imap example, I just needed both ;) )
-FROM nextcloud:23-fpm-alpine
+FROM nextcloud:24-fpm-alpine
 LABEL maintainer="Martin Biermair <martin@biermair.at>"
 
 RUN apk add --no-cache supervisor gmp-dev imagemagick
